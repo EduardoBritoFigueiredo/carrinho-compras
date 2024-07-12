@@ -1,4 +1,6 @@
 let carrinho = document.querySelector('.carrinho__produtos__produto');
+let elementoTotal = document.getElementById('valor-total');
+
 let quantidade;
 let total = 0;
 
@@ -17,17 +19,16 @@ function adicionar() {
 
 function colocarNoCarrinho(quantidade, produto, preco) {
   let novoItem = `<br><span class="texto-azul">${quantidade}x </span>${produto} - <span class="texto-azul">R$${preco}</span>`;
+  console.log(`novoItem = ${novoItem}`);
 
   carrinho.innerHTML += novoItem;
 }
 
 function atualizarTotal() {
-  console.log(`total = ${total}`)
-  let elementoTotal = document.getElementById('valor-total');
-  console.log(`elementoTotal = ${elementoTotal.innerText}`);
   elementoTotal.innerText = `R$${total}`;
 }
 
 function limpar() {
   carrinho.innerHTML = '';
+  elementoTotal.innerText = `R$$0`;
 }
