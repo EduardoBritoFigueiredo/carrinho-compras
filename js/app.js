@@ -12,6 +12,18 @@ function adicionar() {
   let valorUnitario = produtoComPreco[1];
   total += (valorUnitario * quantidade);
 
+  // Verificar se o produto selecionado é válido
+  if (!produto || produto.trim() === "") {
+    alert("Selecione um produto válido.");
+    return;
+}
+
+// Verificar se a quantidade inserida é válida
+if (isNaN(quantidade) || quantidade <= 0) {
+    alert("Insira uma quantidade válida.");
+    return;
+}
+
   colocarNoCarrinho(quantidade, produto, valorUnitario);
   atualizarTotal();
   elementoQuantidade.value = '';
