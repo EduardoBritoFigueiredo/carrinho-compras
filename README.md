@@ -4,6 +4,10 @@
 
 Desenvolvimento de uma página web de carrinho de compras de produtos online usando Javascritpt, HTML e CSS durante desafios práticos da formação em lógica de programação básica na Alura.
 
+## SNAPSHOTS
+
+![snapshot da página web](/assets/printscreen%20carrinho-compras.png)
+
 ## TECHNOLOGIES
 
 - ![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
