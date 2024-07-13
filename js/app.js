@@ -9,18 +9,16 @@ function adicionar() {
   quantidade = elementoQuantidade.value;
   let produtoComPreco = document.getElementById('produto').value.split(' - R$');
   let produto = produtoComPreco[0];
-  let preco = produtoComPreco[1];
-  total += (preco * quantidade);
+  let valorUnitario = produtoComPreco[1];
+  total += (valorUnitario * quantidade);
 
-  colocarNoCarrinho(quantidade, produto, preco);
+  colocarNoCarrinho(quantidade, produto, valorUnitario);
   atualizarTotal();
   elementoQuantidade.value = '';
 }
 
-function colocarNoCarrinho(quantidade, produto, preco) {
-  let novoItem = `<br><span class="texto-azul">${quantidade}x </span>${produto} - <span class="texto-azul">R$${preco}</span>`;
-  console.log(`novoItem = ${novoItem}`);
-
+function colocarNoCarrinho(quantidade, produto, valorUnitario) {
+  let novoItem = `<section class="carrinho__produtos__produto"><span class="texto-azul">${quantidade}x </span>${produto} - <span class="texto-azul">R$${valorUnitario}</span></section>`;
   carrinho.innerHTML += novoItem;
 }
 
@@ -31,4 +29,5 @@ function atualizarTotal() {
 function limpar() {
   carrinho.innerHTML = '';
   elementoTotal.innerText = `R$$0`;
+  total = 0;
 }
